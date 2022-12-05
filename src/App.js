@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import SearchBar from './components/searchBar/SearchBar';
 import TabBarMenu from './components/tabBarMenu/TabBarMenu';
 import MetricSlider from './components/metricSlider/MetricSlider';
 import axios from 'axios';
 
+
 const apiKey = '7613e22655f9590922054d0746226b6e';
 
 
+
+
 function App() {
+
+    const [weatherData, setWeatherData] = useState({}) ;
 
     async function fetchData() {
         try {
             const result = await
                axios.get(`https://api.openweathermap.org/data/2.5/weather?q=eindhoven,nl&appid=${apiKey}&lang=nl`);
             console.log(result.data);
+            setWeatherData(result.data);
         } catch (error) {
             console.error(error)
         }

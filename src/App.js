@@ -12,6 +12,7 @@ const apiKey = '7613e22655f9590922054d0746226b6e';
 function App() {
 
     const [weatherData, setWeatherData] = useState({});
+    const [location, setLocation] = useState('');
 
     async function fetchData() {
         try {
@@ -26,6 +27,7 @@ function App() {
 
     return (
         <>
+return(<SearchBar setLocationHandler={setLocation}/> )
 
             <div className="weather-container">
 
@@ -40,9 +42,9 @@ function App() {
                 <h1>{weatherData.main.temp}</h1>
             </>
             }
-                <button
-                    type="button"
-                    onClick={fetchData}>
+                        <button
+                            type="button"
+                            onClick={fetchData}>
                     Haal data op!
                 </button>
               </span>

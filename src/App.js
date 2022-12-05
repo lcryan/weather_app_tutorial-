@@ -4,6 +4,10 @@ import SearchBar from './components/searchBar/SearchBar';
 import TabBarMenu from './components/tabBarMenu/TabBarMenu';
 import MetricSlider from './components/metricSlider/MetricSlider';
 
+const apiKey = '5f8a63406e1b065089f3f5e6e984050f';
+
+
+
 function App() {
   return (
     <>
